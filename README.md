@@ -15,7 +15,7 @@
     Megaads\PhonenumberConverter\PhonenumberConverterServiceProvider::class
 ];
 
-add config\phone_number_converter.php file:
+#/Config/phone_number_converter.php:
 return [
     'target' => [
         'table1' => ['column1', 'column2'],
