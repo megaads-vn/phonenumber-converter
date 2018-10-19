@@ -1,0 +1,23 @@
+{
+    "name": "megaads/phonenumber-converter",
+    "description": "",
+    "authors": [
+        {
+            "name": "megaads",
+            "email": "info@megaads.vn"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Megaads\\PhonenumberConverter\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

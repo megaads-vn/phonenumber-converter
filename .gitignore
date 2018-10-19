@@ -1,0 +1,14 @@
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+tests/
+src/views/.gitkeep
+src/migrations/.gitkeep
+src/lang/
+src/controllers/.gitkeep
+src/config/.gitkeep
+public/.gitkeep
+.travis.yml
+phpunit.xml
+public/js/jquery.min.js
