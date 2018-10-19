@@ -17,5 +17,11 @@ class IDataImpl implements IData {
                 ->get($property['columns']);
     }
 
+    public function update($property, $dataUpdate) {
+        return DB::table($property['table'])
+                    ->where('id', '=', $dataUpdate['id'])
+                    ->update($dataUpdate);
+    }
+
 }
 ?>
