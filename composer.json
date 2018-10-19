@@ -1,6 +1,6 @@
 {
     "name": "megaads/phonenumber-converter",
-    "description": "Công cụ chuyển đổi số điện thoại cho laravel",
+    "description": "Công cụ chuyển đổi số điện thoại cho laravel 4",
     "keywords": ["phone number", "convert", "chuyển đổi", "số điện thoại", "chuyen doi", "so dien thoai" , "sdt", "megaads-vn", "phonenumber-converter"],
     "license": "MIT",
     "authors": [

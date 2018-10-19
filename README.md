@@ -1,4 +1,4 @@
-# Phone number converter for Laravel
+# Phone number converter for Laravel 4
 
 ##Installation:
 **add in file composer.json**
