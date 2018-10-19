@@ -12,6 +12,9 @@
         "illuminate/support": "4.2.*"
     },
     "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
         "psr-0": {
             "Megaads\\PhonenumberConverter\\": "src/"
         }
