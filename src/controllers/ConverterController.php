@@ -20,7 +20,7 @@ class ConverterController extends Controller {
     public function __construct() {
         $this->iData = new IDataImpl();
         $this->iConverter = new IConverterImpl();
-        View::addNamespace('phonenumber-converter', base_path('workbench') . '/megaads-vn/phonenumber-converter/src/views');
+        View::addNamespace('phonenumber-converter', base_path('workbench') . '/megaads/phonenumber-converter/src/views');
     }
 
     public function convertPhoneNumber() {
