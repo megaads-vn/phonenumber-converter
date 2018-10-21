@@ -17,7 +17,7 @@
 
 #/Config/phone_number_converter.php:
 return [
-    'target' => [
+    'tables' => [
         'table1' => ['column1', 'column2'],
         'table2' => ['column1', 'column2']
     ]
