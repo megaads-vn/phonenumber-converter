@@ -24,7 +24,7 @@ class ConverterController extends Controller {
     }
 
     public function convertPhoneNumber() {
-        $properties = Config::get("phone_number_converter.target", []);
+        $properties = Config::get("phone_number_converter.tables", []);
         return View::make('phonenumber-converter::index', ['properties' => $properties]);
     }
 
