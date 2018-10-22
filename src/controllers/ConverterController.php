@@ -51,7 +51,10 @@ class ConverterController extends Controller {
                         if (count($data) > 0) {
                             foreach ($data as $item) {
                                 $newData = $this->iConverter->converter($item);
-                                $this->iData->update($property, $newData);
+                                if (isset($newData['isUpdate']) && $newData['isUpdate']) {
+                                    unset($newData['isUpdate']);
+                                    $this->iData->update($property, $newData);
+                                }
                             }
                         }
                     }

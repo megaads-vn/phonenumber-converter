@@ -15,13 +15,19 @@ class IConverterImpl implements IConverter {
 
     public function converter($object) {
         $retVal = [];
+        $isUpdate = false;
         foreach ($object as $key => $value) {
             if ($key == 'id') {
                 $retVal[$key] = $value;
             } else {
-                $retVal[$key] = $this->convert($value);
+                $newValue = $this->convert($value);
+                if (strcmp($value, $newValue)) {
+                    $retVal[$key] = $newValue;
+                    $isUpdate = true;
+                }
             }
         }
+        $retVal['isUpdate'] = $isUpdate;
         return $retVal;
     }
 
