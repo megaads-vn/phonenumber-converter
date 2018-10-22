@@ -1,21 +1,21 @@
 # Phone number converter for Laravel 4
 
-##Installation:
+## Installation:
 **add in file composer.json**
 ```
 "require": {
 	"megaads/phonenumber-converter": "^1.0"
 }
 ```
-##Usage:
+## Usage:
 **Register Provider**
 ```
-#/Config/app.php
+# /Config/app.php
 'providers' => [
     Megaads\PhonenumberConverter\PhonenumberConverterServiceProvider
 ];
 
-#/Config/phone_number_converter.php:
+# /Config/phone_number_converter.php:
 return [
     'tables' => [
         'table1' => ['column1', 'column2'],
