@@ -9,7 +9,7 @@ class PhonenumberConverterServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	protected $defer = true;
 
 	/**
 	 * Bootstrap the application events.
@@ -39,7 +39,7 @@ class PhonenumberConverterServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('megaads/phonenumber-converter');
 	}
 
 }

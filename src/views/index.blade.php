@@ -48,7 +48,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Table</th>
-                                        <th>Convert column</th>
+                                        <th>Column</th>
                                         <th></th>
                                     </tr>
                                     <?php
