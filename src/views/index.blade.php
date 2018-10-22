@@ -48,6 +48,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Table</th>
+                                        <th>Convert column</th>
                                         <th></th>
                                     </tr>
                                     <?php
@@ -58,6 +59,15 @@
                                         <tr>
                                             <td><?= $i ?></td>
                                             <td><?= $key ?></td>
+                                            <td>
+                                                <?php
+                                                foreach($value as $item) {
+                                                    ?>
+                                                    <span><?= $item ?> </span>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </td>
                                             <td style="width: 200px;">
                                                 <button data-table="<?= $key ?>" class="btn btn-default js-converting" style="float: left;">Convert</button>
                                                 <div class="loader hidden" id="js-loader-<?= $key ?>"></div>
