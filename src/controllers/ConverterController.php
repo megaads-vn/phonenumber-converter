@@ -37,7 +37,7 @@ class ConverterController extends Controller {
         ];
         try {
             if ($table != null) {
-                $properties = Config::get("phone_number_converter.target");
+                $properties = Config::get("phone_number_converter.tables");
                 if (isset($properties[$table])) {
                     $property['table'] = $table;
                     $properties[$table][] = 'id';
