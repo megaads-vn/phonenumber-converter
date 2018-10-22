@@ -12,7 +12,7 @@
 ```
 #/Config/app.php
 'providers' => [
-    Megaads\PhonenumberConverter\PhonenumberConverterServiceProvider::class
+    Megaads\PhonenumberConverter\PhonenumberConverterServiceProvider
 ];
 
 #/Config/phone_number_converter.php:
