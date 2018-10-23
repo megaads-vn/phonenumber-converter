@@ -33,7 +33,8 @@ class ConverterController extends Controller {
         ini_set('max_execution_time', 3000);
         $table = Input::get('table', null);
         $response = [
-            'status' => 'failed'
+            'status' => 'failed',
+            'numberOfRecordUpdate' => 0
         ];
         try {
             if ($table != null) {
@@ -49,12 +50,17 @@ class ConverterController extends Controller {
                         $property['pageId'] = $i;
                         $data = $this->iData->retrieve($property);
                         if (count($data) > 0) {
+                            $dataUpdate = [];
                             foreach ($data as $item) {
                                 $newData = $this->iConverter->converter($item);
                                 if (isset($newData['isUpdate']) && $newData['isUpdate']) {
                                     unset($newData['isUpdate']);
-                                    $this->iData->update($property, $newData);
+                                    $dataUpdate[] = $newData;
                                 }
+                            }
+                            if (count($dataUpdate) > 0) {
+                                $response['numberOfRecordUpdate'] += count($dataUpdate);
+                                $this->iData->excecuteStatement($property, $dataUpdate);
                             }
                         }
                     }

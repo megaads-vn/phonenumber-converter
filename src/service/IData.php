@@ -9,6 +9,8 @@ interface IData {
 
     function update($property, $dataUpdate);
 
+    function excecuteStatement($property, $data);
+
 }
 
 
