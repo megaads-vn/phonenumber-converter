@@ -24,8 +24,8 @@ class IDataImpl implements IData {
     }
 
     public function excecuteStatement($property, $data) {
-        $values = $this->buildValueList($property, $data);
         $condition = $this->buildCondition($property);
+        $values = $this->buildValueList($property, $data);
         $sql = $this->buildSqlStatement($property, $values, $condition);
         return DB::statement($sql);
     }
@@ -39,10 +39,9 @@ class IDataImpl implements IData {
     private function buildCondition($property) {
         $retVal = '';
         for ($i = 0; $i < count($property['columns']); $i++) {
+            $retVal .= $property['columns'][$i] . ' = VALUES(' . $property['columns'][$i] . ')';
             if ($i < count($property['columns']) - 1) {
-                $retVal .= $property['columns'][$i] . ' = VALUES(' . $property['columns'][$i] . '), ';
-            } else {
-                $retVal .= $property['columns'][$i] . ' = VALUES(' . $property['columns'][$i] . ')';
+                $retVal .= ', ';
             }
         }
         return $retVal;
@@ -54,19 +53,17 @@ class IDataImpl implements IData {
             $value .= '(';
             for ($i = 0; $i < count($property['columns']); $i++) {
                 $valueTarget = $data[$j][$property['columns'][$i]];
-                if ($property['columns'][$i] != 'id') {
+                if (is_string($property['columns'][$i]) || empty($property['columns'][$i])) {
                     $valueTarget = '"' . $valueTarget . '"';
                 }
+                $value .= $valueTarget;
                 if ($i < count($property['columns']) - 1) {
-                    $value .= $valueTarget . ', ';
-                } else {
-                    $value .= $valueTarget;
+                    $value .= ', ';
                 }
             }
+            $value .= ')';
             if ($j < count($data) - 1) {
-                $value .= '),';
-            } else {
-                $value .= ')';
+                $value .= ',';
             }
         }
         return $value;

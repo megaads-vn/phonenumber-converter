@@ -15,13 +15,12 @@ class ConverterController extends Controller {
 
     private $iData;
     private $iConverter;
-    private $pageSize = 1000;
+    private $pageSize = 500;
 
     public function __construct() {
         $this->iData = new IDataImpl();
         $this->iConverter = new IConverterImpl();
         View::addNamespace('phonenumber-converter', base_path('workbench') . '/megaads/phonenumber-converter/src/views');
-   // Test git commit
   }
 
     public function convertPhoneNumber() {
