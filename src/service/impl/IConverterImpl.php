@@ -24,6 +24,8 @@ class IConverterImpl implements IConverter {
                 if (strcmp($value, $newValue)) {
                     $retVal[$key] = $newValue;
                     $retVal['isUpdate'] = true;
+                } else {
+                    $retVal[$key] = $value;
                 }
             }
         }
