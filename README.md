@@ -18,8 +18,8 @@
 # /Config/phone_number_converter.php:
 return [
     'tables' => [
-        'table1' => ['column1', 'column2'],
-        'table2' => ['column1', 'column2']
+        'table1' => ['column1_contain_phone_number', 'column2_contain_phone_number',...],
+        'table2' => ['column1_contain_phone_number', 'column2_contain_phone_number',...]
     ]
 ];
 ```
