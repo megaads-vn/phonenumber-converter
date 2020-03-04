@@ -1,4 +1,5 @@
 # Phone number converter for Laravel 4
+vd: 0165 -> 035, 0120 -> 070, ...
 
 ## Installation:
 **add in file composer.json**
